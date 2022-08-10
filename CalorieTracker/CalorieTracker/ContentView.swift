@@ -14,7 +14,8 @@ struct ContentView: View {
     @State var fat: Double = 0.5
     @State var carbohydrates: Double = 0.5
     @State var selectedFood: String = "meow"
-    let meows: [String] = ["meow", "bark", "woof"]
+    @State var meows: [String] = ["meow", "bark", "woof"]
+    @State var selected: [String] = []
     
     var body: some View {
         ZStack{
@@ -39,6 +40,14 @@ struct ContentView: View {
                 }
                 Picker("Add Food", selection: $selectedFood){
                     ForEach(meows, id:\.self){
+                        Text($0)
+                    }
+                }
+                    .onChange(of: selectedFood){ value in
+                        selected.append(selectedFood)
+                    }
+                List{
+                    ForEach(selected, id:\.self){
                         Text($0)
                     }
                 }
@@ -77,14 +86,6 @@ struct CircularProgressView: View {
                     .animation(.easeOut, value: progress)
             }
         }
-    }
-}
-
-struct FoodListView: View {
-    
-    
-    var body: some View {
-        Text("meow")
     }
 }
 
