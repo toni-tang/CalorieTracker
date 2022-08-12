@@ -27,6 +27,26 @@ struct Database {
         }
     }()
     
+    var migrator: DatabaseMigrator {
+        var migrator = DatabaseMigrator()
+        #if DEBUG
+        migrator.eraseDatabaseOnSchemaChange = true
+        #endif
+        migrator.registerMigration("v1") { db in
+            try createFoodTable(db)
+        }
+        return migrator
+    }
+    
+    private func createFoodTable(_ db: GRDB.Database) throws {
+        try db.create(table: "foodList") { table in
+            table.autoIncrementedPrimaryKey("id")
+            table.column("name", .text).notNull()
+            table.column("proteins", .integer).notNull()
+            table.column("fats", .integer).notNull()
+            table.column("carbs", .integer).notNull()
+        }
+    }
     
 }
 

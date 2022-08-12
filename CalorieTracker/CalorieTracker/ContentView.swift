@@ -13,9 +13,10 @@ struct ContentView: View {
     @State var protein: Double = 0.5
     @State var fat: Double = 0.5
     @State var carbohydrates: Double = 0.5
-    @State var selectedFood: String = "meow"
-    @State var meows: [String] = ["meow", "bark", "woof"]
-    @State var selected: [String] = []
+    @State var selectedFood: Food
+    @State var foodList = FoodList()
+    @State var selected = [Food]()
+    
     
     var body: some View {
         ZStack{
@@ -39,7 +40,7 @@ struct ContentView: View {
                     }
                 }
                 Picker("Add Food", selection: $selectedFood){
-                    ForEach(meows, id:\.self){
+                    ForEach(foodList, id:\.self){
                         Text($0)
                     }
                 }
@@ -48,7 +49,7 @@ struct ContentView: View {
                     }
                 List{
                     ForEach(selected, id:\.self){
-                        Text($0)
+                        Text($0.name)
                     }
                 }
                 Spacer()
