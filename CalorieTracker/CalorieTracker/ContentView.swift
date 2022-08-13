@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel: ViewModel
     
     @State var calories: Double = 0.5
     @State var protein: Double = 0.5
     @State var fat: Double = 0.5
     @State var carbohydrates: Double = 0.5
-    @State var selectedFood: Food
-    @State var foodList = FoodList()
-    @State var selected = [Food]()
+    @State var selectedFood = Food()
     
+    init(_ database : Database = .db ) {
+        let viewModel = ViewModel(foodDatabase: FoodList(.db))
+        _viewModel = .init(wrappedValue: viewModel)
+    }
     
     var body: some View {
         ZStack{
@@ -40,15 +43,16 @@ struct ContentView: View {
                     }
                 }
                 Picker("Add Food", selection: $selectedFood){
-                    ForEach(foodList, id:\.self){
-                        Text($0)
+                    ForEach(viewModel.foodList){
+                        Text($0.name)
                     }
                 }
                     .onChange(of: selectedFood){ value in
-                        selected.append(selectedFood)
+                        viewModel.selectedFoodList.append(selectedFood)
+                        viewModel.objectWillChange.send()
                     }
                 List{
-                    ForEach(selected, id:\.self){
+                    ForEach(viewModel.selectedFoodList){
                         Text($0.name)
                     }
                 }
@@ -96,6 +100,6 @@ func calculate() -> Int {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(.db)
     }
 }

@@ -15,7 +15,7 @@ public struct Food : Codable, Equatable, Identifiable, Hashable, FetchableRecord
     public var fats: Int
     public var carbs: Int
     
-    public init(id: Int64? = nil, name: String, proteins: Int, fats: Int, carbs: Int) {
+    public init(id: Int64? = nil, name: String = "", proteins: Int = 0, fats: Int = 0, carbs: Int = 0) {
         self.id = id
         self.name = name
         self.proteins = proteins

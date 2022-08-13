@@ -14,28 +14,7 @@ protocol FoodStoring {
     @discardableResult func delete(_ food: Food) async throws -> Bool
 }
 
-final class FoodList: FoodStoring, RandomAccessCollection {
-    
-    func index(before i: Int) -> Int {
-        <#code#>
-    }
-    
-    func index(after i: Int) -> Int {
-        <#code#>
-    }
-    
-    var startIndex: Int
-    
-    var endIndex: Int
-    
-    typealias Element = Food
-    
-    typealias Index = Int
-    
-    typealias SubSequence = Food
-    
-    typealias Indices = Int
-    
+final class FoodList: FoodStoring {
     private let database: Database
     
     init(_ database: Database = .db) {

@@ -20,7 +20,7 @@ struct Database {
     
     static let db : Database = {
         do {
-           let database = try Database(DatabaseQueue(path: "/Users/tonytang/Desktop/Xcode/Projects/CalorieTracker/CalorieTracker/CalorieTracker"))
+           let database = try Database(DatabaseQueue(path: "/Users/tonytang/Desktop/Food.db"))
             return database
         } catch {
             fatalError("Unresolved error: \(error)")

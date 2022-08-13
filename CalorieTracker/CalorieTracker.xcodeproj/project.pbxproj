@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		152731C70C7E8DC9F35000EE /* Pods_CalorieTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8908413BBF87B02E17320070 /* Pods_CalorieTracker.framework */; };
 		A81B696C289E227C0069B22B /* CalorieTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B696B289E227C0069B22B /* CalorieTrackerApp.swift */; };
 		A81B696E289E227C0069B22B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B696D289E227C0069B22B /* ContentView.swift */; };
 		A81B6970289E227E0069B22B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81B696F289E227E0069B22B /* Assets.xcassets */; };
@@ -15,6 +14,9 @@
 		A8B038BE28A475E700C2DEAD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B038BD28A475E700C2DEAD /* Database.swift */; };
 		A8B038EA28A49CD400C2DEAD /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B038E928A49CD400C2DEAD /* Food.swift */; };
 		A8B038EC28A58EF800C2DEAD /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B038EB28A58EF800C2DEAD /* FoodList.swift */; };
+		A8B038F028A755C200C2DEAD /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B038EF28A755C200C2DEAD /* ContentView+ViewModel.swift */; };
+		A8B038F128A7618900C2DEAD /* Pods_CalorieTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8908413BBF87B02E17320070 /* Pods_CalorieTracker.framework */; };
+		A8B038F228A7618900C2DEAD /* Pods_CalorieTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8908413BBF87B02E17320070 /* Pods_CalorieTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A8B038F228A7618900C2DEAD /* Pods_CalorieTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +45,7 @@
 		A8B038BD28A475E700C2DEAD /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A8B038E928A49CD400C2DEAD /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		A8B038EB28A58EF800C2DEAD /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		A8B038EF28A755C200C2DEAD /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152731C70C7E8DC9F35000EE /* Pods_CalorieTracker.framework in Frameworks */,
+				A8B038F128A7618900C2DEAD /* Pods_CalorieTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,7 @@
 				A81B696B289E227C0069B22B /* CalorieTrackerApp.swift */,
 				A81B696D289E227C0069B22B /* ContentView.swift */,
 				A8B038BD28A475E700C2DEAD /* Database.swift */,
+				A8B038EF28A755C200C2DEAD /* ContentView+ViewModel.swift */,
 				A8B038EB28A58EF800C2DEAD /* FoodList.swift */,
 				A8B038E928A49CD400C2DEAD /* Food.swift */,
 				A81B696F289E227E0069B22B /* Assets.xcassets */,
@@ -233,6 +238,7 @@
 				A81B696E289E227C0069B22B /* ContentView.swift in Sources */,
 				A81B696C289E227C0069B22B /* CalorieTrackerApp.swift in Sources */,
 				A8B038EC28A58EF800C2DEAD /* FoodList.swift in Sources */,
+				A8B038F028A755C200C2DEAD /* ContentView+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
